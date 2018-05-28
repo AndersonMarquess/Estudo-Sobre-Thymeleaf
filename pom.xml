@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.andersonmarques</groupId>
+    <artifactId>Estudo-Sobre-Thymeleaf</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <!--Adicionados-->
+    <packaging>jar</packaging>
+
+    <name>demo-mvc</name>
+    <description>Projeto para estudo sobre Spring boot MVC com thymeleaf</description>
+
+    <!--Define a versão do spring boot-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.1.RELEASE</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId><!--Referente ao thymeleaf-->
+            <version>RELEASE</version><!-- A versão é opcional, pois a mesma é herdada da tag parent-->
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+    </dependencies>
+
+    <!--Transforma o objeto final em uma arquivo .jar executavel-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
