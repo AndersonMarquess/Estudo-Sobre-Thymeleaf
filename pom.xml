@@ -65,6 +65,12 @@
             <artifactId>jquery-mask-plugin</artifactId>
             <version>1.14.15</version>
         </dependency>
+
+        <!--JPA e Hibernate-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
     </dependencies>
 
     <!--Transforma o objeto final em uma arquivo .jar executavel-->
