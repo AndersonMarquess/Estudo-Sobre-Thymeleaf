@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
-        xmlns:th="http://www.thymeleaf.org"
-        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"> <!--facilita o uso de páginas dinamicas-->
+        xmlns:th="http://www.w3.org/1999/xhtml"
+        xmlns:th="https://www.thymeleaf.org"
+        xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout"> <!--facilita o uso de páginas dinamicas-->
     <head>
         <title>Spring-Boot Básico</title>
         <meta charset="UTF-8" />
@@ -21,25 +22,25 @@
 
     <body>
         <!--Cabeçalho-->
-        <header>
+        <header th:replace="fragments/header :: cabecalho">
             <div>Header</div>
         </header>
 
         <!--Corpo-->
-        <div>
+        <div class="layout-main">
             <aside>
-                <nav>
+                <nav th:replace="fragments/sidebar :: nav-sidebar">
                     <span>Span do menu</span>
                 </nav>
             </aside>
 
-            <section>
+            <section layout:fragment="corpo">
                 <div>Conteúdo das páginas</div>
             </section>
         </div>
 
         <!--Roda pé-->
-        <footer>
+        <footer th:replace="fragments/footer :: rodape"><!--fragments/footer é o caminho, depois informamos a onde localizar o fragmento de código-->
             <div>Footer</div>
         </footer>
 

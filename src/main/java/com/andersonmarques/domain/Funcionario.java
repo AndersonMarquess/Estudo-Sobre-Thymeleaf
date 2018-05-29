@@ -22,7 +22,7 @@ public class Funcionario extends AbstractEntity<Long> {
     private LocalDate dataSaida;
 
     //Quando um funcionario for inserido, o endereço será inserido em cascata, a mesma coisa para remoção
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "endereco_id_fk")
     private Endereco endereco;
 

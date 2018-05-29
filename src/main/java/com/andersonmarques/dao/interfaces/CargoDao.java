@@ -4,6 +4,7 @@ import com.andersonmarques.domain.Cargo;
 
 import java.util.List;
 
+
 public interface CargoDao {
     void save(Cargo entity);
 

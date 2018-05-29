@@ -12,70 +12,70 @@
 	<!-- Bootstrap core CSS -->
 	<link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="/webjars/open-iconic/font/css/open-iconic-bootstrap.min.css" rel="stylesheet" />
-	
+
 	<!-- Custom styles for this template -->
 	<link href="/css/style.css" rel="stylesheet" />
 </head>
 <body>
-	<header>
-		<nav class="navbar navbar-inverse navbar navbar-dark bg-dark fixed-top">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="btn btn-dark navbar-toggle pull-left">
-						<i class="oi oi-menu"></i>
-					</button>
-					<a class="navbar-brand " href="#">Curso Spring Boot</a>
-				</div>
+<header>
+	<nav class="navbar navbar-inverse navbar navbar-dark bg-dark fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="btn btn-dark navbar-toggle pull-left">
+					<i class="oi oi-menu"></i>
+				</button>
+				<a class="navbar-brand " href="#">Curso Spring Boot</a>
 			</div>
+		</div>
+	</nav>
+</header>
+
+<div class="layout-main">
+
+	<aside>
+		<nav class="sidebar sidebar-open">
+			<ul class="nav nav-pills">
+				<li class="nav-item"><a class="nav-link " href="/"> <i
+						class="oi oi-home"></i> <span>Home</span>
+				</a></li>
+			</ul>
+
+			<ul class="nav nav-pills">
+				<li class="nav-item"><span class="nav-link active" >Departamentos</span></li>
+				<li class="nav-item"><a class="nav-link"
+										href="/departamentos/cadastrar"> <i class="oi oi-plus"></i> <span>Cadastrar</span>
+				</a></li>
+				<li class="nav-item"><a class="nav-link"
+										href="/departamentos/listar"> <i class="oi oi-spreadsheet"></i>
+					<span>Listar </span>
+				</a></li>
+			</ul>
+
+			<ul class="nav nav-pills">
+				<li class="nav-item"><span class="nav-link active" >Cargos</span></li>
+				<li class="nav-item"><a class="nav-link"
+										href="/cargos/cadastrar"> <i class="oi oi-plus"></i> <span>Cadastrar </span>
+				</a></li>
+				<li class="nav-item"><a class="nav-link"
+										href="/cargos/listar"> <i
+						class="oi oi-spreadsheet"></i> <span>Listar </span>
+				</a></li>
+			</ul>
+
+			<ul class="nav nav-pills">
+				<li class="nav-item"><span class="nav-link active">Funcionários</span></li>
+				<li class="nav-item"><a class="nav-link"
+										href="/funcionarios/cadastrar"> <i class="oi oi-plus"></i> <span>Cadastrar </span>
+				</a></li>
+				<li class="nav-item"><a class="nav-link"
+										href="/funcionarios/listar"> <i class="oi oi-spreadsheet"></i> <span>Listar </span>
+				</a></li>
+			</ul>
 		</nav>
-	</header>
-	
-	<div class="layout-main">	
-	
-		<aside>
-			<nav class="sidebar sidebar-open">
-				<ul class="nav nav-pills">
-					<li class="nav-item"><a class="nav-link " href="/"> <i
-							class="oi oi-home"></i> <span>Home</span>
-					</a></li>
-				</ul>
+	</aside>
 
-				<ul class="nav nav-pills">
-					<li class="nav-item"><span class="nav-link active" >Departamentos</span></li>
-					<li class="nav-item"><a class="nav-link"
-						href="/departamentos/cadastrar"> <i class="oi oi-plus"></i> <span>Cadastrar</span>
-					</a></li>
-					<li class="nav-item"><a class="nav-link"
-						href="/departamentos/listar"> <i class="oi oi-spreadsheet"></i>
-							<span>Listar </span>
-					</a></li>
-				</ul>
-
-				<ul class="nav nav-pills">
-					<li class="nav-item"><span class="nav-link active" >Cargos</span></li>
-					<li class="nav-item"><a class="nav-link" 
-						href="/cargos/cadastrar"> <i class="oi oi-plus"></i> <span>Cadastrar </span>
-					</a></li>
-					<li class="nav-item"><a class="nav-link" 
-						href="/cargos/listar"> <i
-							class="oi oi-spreadsheet"></i> <span>Listar </span>
-					</a></li>
-				</ul>
-
-				<ul class="nav nav-pills">
-					<li class="nav-item"><span class="nav-link active">Funcionários</span></li>
-					<li class="nav-item"><a class="nav-link" 
-						href="/funcionarios/cadastrar"> <i class="oi oi-plus"></i> <span>Cadastrar </span>
-					</a></li>
-					<li class="nav-item"><a class="nav-link" 
-						href="/funcionarios/listar"> <i class="oi oi-spreadsheet"></i> <span>Listar </span>
-					</a></li>
-				</ul>
-			</nav>
-		</aside>
-			
 	<section class="layout-content">
-	
+
 		<nav class="navbar navbar-expand-md bg-light">
 			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 				<ul class="navbar-nav mr-auto">
@@ -86,19 +86,19 @@
 				</ul>
 			</div>
 		</nav>
-		
+
 		<div class="container">
 			<div id="list-home" class="row">
 				<div class="col-4">
 					<div class="list-group" id="list-tab" role="tablist">
 						<a class="list-group-item list-group-item-action active"
-							id="list-spring-boot-list" data-toggle="list" href="#spring-boot"
-							role="tab" aria-controls="spring-boot">Spring-Boot</a> <a
+						   id="list-spring-boot-list" data-toggle="list" href="#spring-boot"
+						   role="tab" aria-controls="spring-boot">Spring-Boot</a> <a
 							class="list-group-item list-group-item-action" id="list-sts-list"
 							data-toggle="list" href="#sts" role="tab" aria-controls="sts">Spring
-							Tool Suite</a> <a class="list-group-item list-group-item-action"
-							id="list-thymeleaf-list" data-toggle="list" href="#thymeleaf"
-							role="tab" aria-controls="thymeleaf">Thymeleaf</a> <a
+						Tool Suite</a> <a class="list-group-item list-group-item-action"
+										  id="list-thymeleaf-list" data-toggle="list" href="#thymeleaf"
+										  role="tab" aria-controls="thymeleaf">Thymeleaf</a> <a
 							class="list-group-item list-group-item-action"
 							id="list-webjars-list" data-toggle="list" href="#webjars"
 							role="tab" aria-controls="webjars">WebJars</a> <a
@@ -131,7 +131,7 @@
 							Pivotal Cloud Foundry, Git, Maven, AspectJ, and more.
 						</div>
 						<div class="tab-pane fade" id="thymeleaf" role="tabpanel"
-							aria-labelledby="list-thymeleaf-list">
+							 aria-labelledby="list-thymeleaf-list">
 							<a href="http://www.thymeleaf.org/">Thymeleaf</a> is a modern
 							server-side Java template engine for both web and standalone
 							environments. With modules for Spring Framework, a host of
@@ -141,13 +141,13 @@
 							do.
 						</div>
 						<div class="tab-pane fade" id="webjars" role="tabpanel"
-							aria-labelledby="list-webjars-list">
+							 aria-labelledby="list-webjars-list">
 							<a href="https://www.webjars.org/">WebJars</a> are client-side
 							web libraries (e.g. jQuery ; Bootstrap) packaged into JAR (Java
 							Archive) files.
 						</div>
 						<div class="tab-pane fade" id="hibernate" role="tabpanel"
-							aria-labelledby="list-hibernate-list">
+							 aria-labelledby="list-hibernate-list">
 							<a href="http://hibernate.org/orm/">Hibernate ORM</a> enables
 							developers to more easily write applications whose data outlives
 							the application process. As an Object/Relational Mapping (ORM)
@@ -160,7 +160,7 @@
 							containers, etc.
 						</div>
 						<div class="tab-pane fade" id="bootstrap" role="tabpanel"
-							aria-labelledby="list-bootstrap-list">
+							 aria-labelledby="list-bootstrap-list">
 							<a href="https://getbootstrap.com/">Bootstrap</a> is an open
 							source toolkit for developing with HTML, CSS, and JS. Quickly
 							prototype your ideas or build your entire app with our Sass
@@ -171,29 +171,29 @@
 				</div>
 			</div>
 		</div>
-		
-	</section>		
-	
-	</div>
-		<footer class="layout-footer">
-		<div class="container">
-			<span class="footer-copy">&copy; 2018 MBallem. Todos os direitos reservados.</span>
-		</div>
-	</footer> 
 
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="/webjars/jquery/jquery.min.js"></script>
-	<script src="/webjars/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
-	<script	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript">
-	    
+	</section>
+
+</div>
+<footer class="layout-footer">
+	<div class="container">
+		<span class="footer-copy">&copy; 2018 MBallem. Todos os direitos reservados.</span>
+	</div>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/webjars/jquery/jquery.min.js"></script>
+<script src="/webjars/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+<script	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+
 		$(function() {
 			$('[data-toggle="popover"]').popover();
 		});
-		
+
 		$(document).ready(function(){
 		    $(".navbar-toggle").click(function(){
 		        $(".sidebar").toggleClass("sidebar-open");

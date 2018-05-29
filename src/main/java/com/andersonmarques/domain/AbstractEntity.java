@@ -1,8 +1,6 @@
 package com.andersonmarques.domain;
 
 
-import org.springframework.data.annotation.Id;
-
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.MappedSuperclass;
@@ -11,11 +9,10 @@ import java.util.Objects;
 
 @MappedSuperclass
 public abstract class AbstractEntity<ID extends Serializable> implements Serializable {
-    private static final long serialVersionUID = 1L;
 
-    @Id
+    @javax.persistence.Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private ID id;//Genérico
+    private ID id;
 
     public ID getId() {
         return id;
