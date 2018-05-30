@@ -3,9 +3,7 @@ package com.andersonmarques.web.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import com.andersonmarques.domain.Departamento;
 import com.andersonmarques.service.DepartamentoService;
@@ -34,6 +32,19 @@ public class DepartamentoController {
     @PostMapping("/salvar")
     public String salvar(Departamento departamento) {
         service.salvar(departamento);
+        return "redirect:/departamentos/cadastrar";
+    }
+
+    @GetMapping("/editar/{id}")
+    public String preEditar(@PathVariable("id") Long id, ModelMap model) {
+        //ModelMap permite evitar a variavel como objeto para página de cadastro
+        model.addAttribute("departamento", service.buscarPorId(id));
+        return "/departamento/cadastro";
+    }
+
+    @PostMapping("/editar")
+    public String editar(Departamento departamento) {
+        service.editar(departamento);
         return "redirect:/departamentos/cadastrar";
     }
 }

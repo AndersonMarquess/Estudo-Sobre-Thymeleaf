@@ -55,9 +55,9 @@
 
         <dependency>
             <!--Jquery da página-->
-            <groupId>org.webjars.bower</groupId>
+            <groupId>org.webjars</groupId>
             <artifactId>jquery</artifactId>
-            <version>3.3.1</version>
+            <version>3.3.1-1</version>
         </dependency>
 
         <dependency>

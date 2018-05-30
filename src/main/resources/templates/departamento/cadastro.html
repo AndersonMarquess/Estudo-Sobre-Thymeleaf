@@ -98,7 +98,10 @@
 	        </nav>
 
 	        <div class="container" id="cadastro">
-	            <form th:action="@{/departamentos/salvar}" th:object="${departamento}" method="POST">
+
+				<!--Condição ternaria para saber se é novo registro ou update-->
+	            <form th:action="${departamento.id == null} ? @{/departamentos/salvar} : @{/departamentos/editar}"
+					  th:object="${departamento}" method="POST">
 	                <div class="form-row">
 	                    <div class="form-group col-md-6">
 	                        <label for="nome">Departamento</label>
@@ -106,7 +109,7 @@
 	                               placeholder="Nome Departamento" autofocus="autofocus" th:field="*{nome}"/>
 	                    </div>
 	                </div>
-	                <input type="hidden" id="id" name="id" value=""/>
+	                <input type="hidden" id="id" th:field="*{id}"/> <!--O ID é atribuido automaticamente ao input, o id é fornecido pelo controller-->
 	                <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
 	            </form>
 	        </div>
@@ -123,6 +126,7 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
+
 <script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
