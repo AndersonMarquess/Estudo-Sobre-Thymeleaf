@@ -1,8 +1,8 @@
 package com.andersonmarques.dao.interfaces;
 
-import com.andersonmarques.domain.Departamento;
-
 import java.util.List;
+
+import com.andersonmarques.domain.Departamento;
 
 public interface DepartamentoDao {
 

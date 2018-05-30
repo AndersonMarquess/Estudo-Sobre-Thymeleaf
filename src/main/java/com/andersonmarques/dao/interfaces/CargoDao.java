@@ -1,8 +1,8 @@
 package com.andersonmarques.dao.interfaces;
 
-import com.andersonmarques.domain.Cargo;
-
 import java.util.List;
+
+import com.andersonmarques.domain.Cargo;
 
 
 public interface CargoDao {

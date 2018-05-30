@@ -1,8 +1,8 @@
 package com.andersonmarques.dao.interfaces;
 
-import com.andersonmarques.domain.Funcionario;
-
 import java.util.List;
+
+import com.andersonmarques.domain.Funcionario;
 
 public interface FuncionarioDao {
 
