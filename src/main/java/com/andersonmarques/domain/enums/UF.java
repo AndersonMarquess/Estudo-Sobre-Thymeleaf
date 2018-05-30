@@ -28,19 +28,19 @@ public enum UF {
     SE("SE", "Sergipe"),
     TO("TO", "Tocantins");
 
-    private String cod_sigla;
-    private String nome_descricao;
+    private String sigla;
+    private String descricao;
 
-    UF(String cod_sigla, String nome_descricao) {
-        this.cod_sigla = cod_sigla;
-        this.nome_descricao = nome_descricao;
+    UF(String sigla, String descricao) {
+        this.sigla = sigla;
+        this.descricao = descricao;
     }
 
-    public String getCod_sigla() {
-        return cod_sigla;
+    public String getSigla() {
+        return sigla;
     }
 
-    public String getNome_descricao() {
-        return nome_descricao;
+    public String getDescricao() {
+        return descricao;
     }
 }
