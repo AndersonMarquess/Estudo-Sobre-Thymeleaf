@@ -29,7 +29,7 @@ public abstract class AbstractDao <TipoGenerico, Tipo_PK_generico extends Serial
     }
 
     public void delete(Tipo_PK_generico id) {
-        entityManager.remove(id);
+        entityManager.remove(entityManager.getReference(entityClass, id));
     }
 
     public TipoGenerico findById(Tipo_PK_generico id) {

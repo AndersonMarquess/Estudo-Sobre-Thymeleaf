@@ -37,7 +37,7 @@ public class DepartamentoController {
 
     @GetMapping("/editar/{id}")
     public String preEditar(@PathVariable("id") Long id, ModelMap model) {
-        //ModelMap permite evitar a variavel como objeto para página de cadastro
+        //ModelMap permite enviar a variável como objeto para página de cadastro
         model.addAttribute("departamento", service.buscarPorId(id));
         return "/departamento/cadastro";
     }
@@ -46,5 +46,14 @@ public class DepartamentoController {
     public String editar(Departamento departamento) {
         service.editar(departamento);
         return "redirect:/departamentos/cadastrar";
+    }
+
+    @GetMapping("/excluir/{id}")
+    public String excluir(@PathVariable("id") Long id, ModelMap model) {
+        if (!service.departamentoTemCargos(id)) {
+            service.excluir(id);
+        }
+
+        return listar(model);
     }
 }

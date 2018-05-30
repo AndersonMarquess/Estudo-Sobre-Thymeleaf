@@ -118,7 +118,10 @@
 									<a class="btn btn-info btn-sm" th:href="@{/departamentos/editar/{id} (id=${d.id}) }" role="button">
 										<span class="oi oi-brush" title="Editar" aria-hidden="true"></span>
 									</a>
-									<button id="btn_departamentos/excluir/3" type="button" class="btn btn-danger btn-sm">
+									<!--O /' + d.id faz a concatenação do valor id junto a url-->
+									<button th:id="${ 'btn_departamentos/excluir/'+ d.id }" type="button" class="btn btn-danger btn-sm"
+											data-toggle="modal" data-target="#myModal">
+
 										<span class="oi oi-circle-x" title="Exclusão desabilitada" aria-hidden="true"></span>
 									</button>
 								</td>
@@ -128,6 +131,26 @@
 	                </table>
 	            </div>
 	        </div>
+
+			<div class="modal" tabindex="-1" role="dialog" id="myModal">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">Atenção</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<p>Clique em confirmar para proceder com a exclusão.</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+							<button id="ok_confirm" type="button" class="btn btn-success">Confirmar</button>
+						</div>
+					</div>
+				</div>
+			</div>
 	
 	    </section>
 	
@@ -147,6 +170,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript">
+
+	var url = '';
+
+	$('button[id*= "btn_"]').click( function() {
+		console.log('Será excluido o');
+		url = "http://localhost:8081/" + $(this).attr('id').split("_")[1]; <!--Separa o "btn" e o "departamentos/excluir/{id}"-->
+	});
+
+	$('#ok_confirm').click( function() {
+		console.log('Será excluido o: '+url);
+		document.location.href = url;
+	});
 
     $(function () {
         $('[data-toggle="popover"]').popover();
