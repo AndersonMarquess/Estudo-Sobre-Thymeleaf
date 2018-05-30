@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <!--th:if funciona como o *ngIf-->
+    <div th:if="${success} != null">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="oi oi-check">
+                <span>
+                    <strong th:text="${success}"></strong>
+                </span>
+
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </i>
+        </div>
+    </div>
+
+    <div th:if="${fail} != null">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="oi oi-check">
+                <span>
+                    <strong th:text="${fail}"></strong>
+                </span>
+
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </i>
+        </div>
+    </div>
+
+</body>
+</html>

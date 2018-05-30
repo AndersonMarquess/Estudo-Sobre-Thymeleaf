@@ -151,6 +151,36 @@
 					</div>
 				</div>
 			</div>
+
+
+			<!--Mensagens-->
+			<!--th:if funciona como o *ngIf-->
+			<div th:if="${success} != null">
+				<div class="alert alert-success alert-dismissible fade show" role="alert">
+					<i class="oi oi-check">
+                <span>
+                    <strong th:text="${success}"></strong>
+                </span>
+
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</i>
+				</div>
+			</div>
+
+			<div th:if="${fail} != null">
+				<div class="alert alert-danger alert-dismissible fade show" role="alert">
+					<i class="oi oi-check">
+                <span>
+                    <strong th:text="${fail}"></strong>
+                </span>
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</i>
+				</div>
+			</div>
 	
 	    </section>
 	
@@ -174,12 +204,10 @@
 	var url = '';
 
 	$('button[id*= "btn_"]').click( function() {
-		console.log('Será excluido o');
 		url = "http://localhost:8081/" + $(this).attr('id').split("_")[1]; <!--Separa o "btn" e o "departamentos/excluir/{id}"-->
 	});
 
 	$('#ok_confirm').click( function() {
-		console.log('Será excluido o: '+url);
 		document.location.href = url;
 	});
 

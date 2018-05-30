@@ -1,12 +1,12 @@
 package com.andersonmarques.web.controller;
 
+import com.andersonmarques.domain.Departamento;
+import com.andersonmarques.service.DepartamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-
-import com.andersonmarques.domain.Departamento;
-import com.andersonmarques.service.DepartamentoService;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/departamentos")
@@ -30,8 +30,9 @@ public class DepartamentoController {
     }
 
     @PostMapping("/salvar")
-    public String salvar(Departamento departamento) {
+    public String salvar(Departamento departamento, RedirectAttributes attr) {
         service.salvar(departamento);
+        attr.addFlashAttribute("success", "Departamento inserido com sucesso!");
         return "redirect:/departamentos/cadastrar";
     }
 
@@ -43,14 +44,18 @@ public class DepartamentoController {
     }
 
     @PostMapping("/editar")
-    public String editar(Departamento departamento) {
+    public String editar(Departamento departamento, RedirectAttributes attr) {
         service.editar(departamento);
+        attr.addFlashAttribute("success", "Departamento editado com sucesso!");
         return "redirect:/departamentos/cadastrar";
     }
 
     @GetMapping("/excluir/{id}")
     public String excluir(@PathVariable("id") Long id, ModelMap model) {
-        if (!service.departamentoTemCargos(id)) {
+        if (service.departamentoTemCargos(id)) {
+            model.addAttribute("fail", "Departamento não removido. Possui cargo(s) vinculado(s).");
+        } else {
+            model.addAttribute("success", "Departamento removido com sucesso!");
             service.excluir(id);
         }
 
