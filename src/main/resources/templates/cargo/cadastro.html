@@ -128,6 +128,10 @@
 	
 	        <div class="container" id="cadastro">
 	            <form th:action="${cargo.id == null} ? @{/cargos/salvar} : @{/cargos/editar}" th:object="${cargo}" method="POST">
+
+					<!--Faz o replace do código presente na página fragaments>validacao-->
+					<div th:replace="fragments/validacao :: validacao"> </div>
+
 	                <div class="form-row">
 	                    <div class="form-group col-md-6">
 	                        <label for="nome">Nome do Cargo</label>

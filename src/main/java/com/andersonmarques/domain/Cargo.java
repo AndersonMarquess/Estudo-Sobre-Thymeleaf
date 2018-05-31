@@ -1,16 +1,21 @@
 package com.andersonmarques.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
 @Table(name = "CARGOS")
 public class Cargo extends AbstractEntity<Long> {
 
-    //O Nome da coluna, not null, unique, varchar(60)
-    @Column(name = "nome", nullable = false, unique = true, length = 60)
+    @NotBlank(message = "Informe um nome")
+    @Size(min = 3, max = 60, message = "O Campo deve possuir entre {min} e {max} caracteres.")
+    @Column(name = "nome", nullable = false, unique = true, length = 60)//O Nome da coluna, not null, unique, varchar(60)
     private String nome;
 
+    @NotNull(message = "Selecione o departamento relativo ao cargo.")
     //Chave estrangeira
     @ManyToOne
     @JoinColumn(name = "id_departamento_fk")
