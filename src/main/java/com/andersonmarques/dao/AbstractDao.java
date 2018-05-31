@@ -40,7 +40,7 @@ public abstract class AbstractDao <TipoGenerico, Tipo_PK_generico extends Serial
         return entityManager.createQuery("from "+entityClass.getSimpleName(), entityClass).getResultList();
     }
 
-    protected List<TipoGenerico> createQuery(String jpql, Object[] params) {
+    protected List<TipoGenerico> createQuery(String jpql, Object... params) {
         TypedQuery<TipoGenerico> query = entityManager.createQuery(jpql, entityClass);
         for (int i = 0; i < params.length; i++) {
             query.setParameter(i+1, params[i]);

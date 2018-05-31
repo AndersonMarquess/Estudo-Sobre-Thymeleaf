@@ -1,8 +1,8 @@
 package com.andersonmarques.dao.interfaces;
 
-import java.util.List;
-
 import com.andersonmarques.domain.Funcionario;
+
+import java.util.List;
 
 public interface FuncionarioDao {
 
@@ -15,5 +15,6 @@ public interface FuncionarioDao {
     Funcionario findById(Long id);
 
     List<Funcionario> findAll();
-    
+
+    List<Funcionario> findByNome(String nome);
 }
