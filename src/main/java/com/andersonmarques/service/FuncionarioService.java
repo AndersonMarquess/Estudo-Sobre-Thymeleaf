@@ -2,6 +2,7 @@ package com.andersonmarques.service;
 
 import com.andersonmarques.domain.Funcionario;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface FuncionarioService {
@@ -19,4 +20,6 @@ public interface FuncionarioService {
     List<Funcionario> buscarPorNome(String nome);
 
     List<Funcionario> buscarPorCargo(Long id);
+
+    List<Funcionario> buscarPorDatas(LocalDate entrada, LocalDate saida);
 }
