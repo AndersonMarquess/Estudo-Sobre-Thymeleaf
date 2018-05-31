@@ -5,11 +5,13 @@ import com.andersonmarques.domain.Funcionario;
 import com.andersonmarques.domain.enums.UF;
 import com.andersonmarques.service.CargoService;
 import com.andersonmarques.service.FuncionarioService;
+import com.andersonmarques.web.validator.FuncionarioValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -25,6 +27,12 @@ public class FuncionarioController {
     private FuncionarioService funcionarioService;
     @Autowired
     private CargoService cargoService;
+
+    //Outra forma de validar
+    @InitBinder
+    public void initBinder(WebDataBinder binder) {
+        binder.addValidators(new FuncionarioValidator());
+    }
 
     @GetMapping("/cadastrar")
     public String cadastrar(Funcionario funcionario) {

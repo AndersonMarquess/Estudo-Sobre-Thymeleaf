@@ -1,20 +1,20 @@
-package com.andersonmarques.web.controller.conversor;
+package com.andersonmarques.web.conversor;
 
-import com.andersonmarques.domain.Cargo;
-import com.andersonmarques.service.CargoService;
+import com.andersonmarques.domain.Departamento;
+import com.andersonmarques.service.DepartamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
 @Component
-public class StringToCargoConverter implements Converter<String, Cargo> {
+public class StringToDepartamentoConverter implements Converter<String, Departamento> {
 
     @Autowired
-    private CargoService service;
+    private DepartamentoService service;
 
 
     @Override
-    public Cargo convert(String text) {
+    public Departamento convert(String text) {
         if(text.isEmpty()) {
             return null;
         }
