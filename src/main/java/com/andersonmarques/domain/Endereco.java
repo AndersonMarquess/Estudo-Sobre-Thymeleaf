@@ -3,30 +3,40 @@ package com.andersonmarques.domain;
 import com.andersonmarques.domain.enums.UF;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 
 @Entity
 @Table(name = "ENDERECOS")
 public class Endereco extends AbstractEntity<Long> {
 
+    @NotBlank
     @Column(nullable = false)
     private String logradouro;
 
+    @NotBlank
     @Column(nullable = false)
     private String bairro;
 
+    @NotBlank
     @Column(nullable = false)
     private String cidade;
 
+    @NotNull(message = "{NotNull.endereco.uf}")
     @Column(nullable = false, length = 2)
     @Enumerated(EnumType.STRING)
     private UF uf;
 
+    @NotNull
+    @Size(min = 9, max = 9, message = "{Size.endereco.cep}")
     @Column(nullable = false, length = 9)
     private String cep;
 
+    @NotNull(message = "{NotNull.endereco.numero}")
+    @Digits(integer = 5, fraction = 0)
     @Column(nullable = false)
     private Integer numero;
 
+    @Size(max = 255)
     private String complemento;
 
     public Endereco() {
