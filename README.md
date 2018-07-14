@@ -1,1 +1,4 @@
-## Conteúdo do curso sobre Thymeleaf e Padrão Spring MVC
+### RepositÃ³rio das aulas do curso de Spring MVC e Thymeleaf.
+Todos os cÃ³digos foram produzido durante as aulas.
+
+Professor(a): Marcio Ballem.
